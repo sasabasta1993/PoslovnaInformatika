@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.ftn.uns.ac.rs/rtgs" elementFormDefault="qualified"
+    xmlns:rtgs="http://www.ftn.uns.ac.rs/rtgs" xmlns:gl="http://www.ftn.uns.ac.rs/projekatXWS">
+
+    <xs:import namespace="http://www.ftn.uns.ac.rs/projekatXWS" schemaLocation="Globals.xsd"/>
+    <xs:element name="MT_103">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ID_poruke" type="gl:TIDPoruke"> </xs:element>
+                <xs:element name="SWIFT_kod_banke_duznika" type="gl:TSWIFT"> </xs:element>
+                <xs:element name="Obracunski_racun_banke_duznika" type="gl:TBrojRacuna"> </xs:element>
+                <xs:element name="SWIFT_kod_banke_poverioca" type="gl:TSWIFT"> </xs:element>
+                <xs:element name="Obracunski_racun_banke_poverioca" type="gl:TBrojRacuna"> </xs:element>
+                <xs:element name="Duznik-nalogodavac">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Svrha_placanja">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Primalac_poverilac">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="255"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Datum_naloga" type="xs:date"/>
+                <xs:element name="Datum_valute" type="xs:date"/>
+                <xs:element name="Racun_duznika" type="gl:TRacun"> </xs:element>
+                <xs:element name="Racun_poverioca" type="gl:TRacun"> </xs:element>
+                <xs:element name="Iznos" type="gl:TIznos"> </xs:element>
+                <xs:element name="Sifra_valute" type="gl:TOznaka_valute"> </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

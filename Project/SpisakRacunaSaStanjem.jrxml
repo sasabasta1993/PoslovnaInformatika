@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SpisakRacunaSaStanjem" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ef00c851-77c4-4cf1-89d5-a82edea4240f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT DNEVNO_STANJE_RACUNA.ID_RACUNA,DNEVNO_STANJE_RACUNA.DSR_PRETHODNO  FROM DNEVNO_STANJE_RACUNA INNER JOIN RACUNI_PRAVNIH_LICA on RACUNI_PRAVNIH_LICA.ID_RACUNA = DNEVNO_STANJE_RACUNA.ID_RACUNA;]]>
+	</queryString>
+	<field name="ID_RACUNA" class="java.lang.Long"/>
+	<field name="DSR_PRETHODNO" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="166" y="-5" width="261" height="20" forecolor="#00CCFF" backcolor="#00FFFF" uuid="97c911b6-cca4-4e2f-bf7f-c1713c8b2374"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Spisak racuna sa stanjem]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="40" height="20" uuid="bcc1c3eb-f090-49bf-b911-f84dd6b1f9ca"/>
+				<text><![CDATA[Datum: ]]></text>
+			</staticText>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="40" y="0" width="100" height="20" uuid="12344682-53cc-4549-a089-29ddee3f82c7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="458" y="0" width="42" height="20" uuid="753493a7-922f-45a6-9350-ca095bac641d"/>
+				<text><![CDATA[Strana:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="500" y="0" width="55" height="20" uuid="f86b80c9-a588-40f5-b0a7-7a460b2ceaeb"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="50">
+			<textField>
+				<reportElement x="21" y="29" width="119" height="20" uuid="817a49e8-e4a6-4d2e-a99f-af8561e7feba"/>
+				<textFieldExpression><![CDATA[$F{ID_RACUNA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="29" width="213" height="20" uuid="a8b51ec9-27e4-4b80-993d-eebd9fc34a3c"/>
+				<textFieldExpression><![CDATA[$F{DSR_PRETHODNO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="214" y="0" width="100" height="15" uuid="bba0544e-e0a0-4eda-b726-f796609b6fbc"/>
+				<text><![CDATA[Stanje]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="0" width="100" height="20" uuid="6cd3cd09-20a2-4d9b-9bee-bc7fea4e641e"/>
+				<text><![CDATA[Id racuna ]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

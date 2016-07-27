@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/app/MainFrame.java=UTF-8
+encoding//src/projekat/actions/RacuniPravnihLicaAction.java=UTF-8
+encoding//src/projekat/forms/AbstractForm.java=UTF-8
+encoding//src/projekat/forms/AnalitikaPresekaStandardForm.java=UTF-8
+encoding//src/projekat/forms/PresekStandardForm.java=UTF-8
+encoding//src/projekat/forms/RacuniPravnihLicaStandardForm.java=UTF-8
+encoding//src/projekat/forms/StavkaClearingRtgsStandardForm.java=UTF-8
+encoding//src/projekat/forms/ValutaStandardForm.java=UTF-8
+encoding//src/projekat/forms/ZaglavljeClearingRtgsStandardForm.java=UTF-8
